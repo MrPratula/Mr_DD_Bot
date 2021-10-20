@@ -1,0 +1,52 @@
+{
+    "start_new":   "Ciao, sono Mr D&D e ti assisterò nella tua avventura di Dungeons and Dragons!\nUsa il comando /help per avere più informazioni!",
+
+    "start":      "Bentornato {}. Usa il comando /help per avere più informazioni",
+
+    "help":       "Per selezionare la lingua usa il comando /lang  \uD83C\uDDFA\uD83C\uDDF8\nPer creare un nuovo personaggio usa il comando /new  \uD83E\uDDCD\nPer gestire i tuoi personaggi usa /char  \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\nPer impostare le tue competenze usa /prof  \uD83E\uDDD1\u200D\uD83D\uDD27\nPer attivare/disattivare la modalita Dungeon Master usa /dm  \uD83D\uDC68\u200D\uD83C\uDFEB\nPer fare dei test usa /check  \uD83E\uDD37\nPer lanciare un dado usa /roll  \uD83C\uDFB2\nPer sferrare un attacco usa /attack  \uD83D\uDC4A",
+
+    "lang_update": "Lingua Italiano impostata correttamente!",
+
+    "char_none":   "Al momento non possiedi alcun personaggio.\nPer creare un nuovo personaggio usa il comando /new.",
+    "char_some":   "Nome - visualizza personaggio\n✅ - attiva personaggio\n\uD83D\uDD27 - modifica personaggio\n❌ - cancella personaggio.\nUsa il comando /new per crearne uno nuovo.",
+    "char_view":  "{}\nForza = {}\nDestrezza = {}\nCostituzione = {}\nIntelligenza = {}\nSaggezza = {}\nCarisma = {}\nCompetenza = {}\nHai competenza nelle seguenti abilità:\n{}",
+    "char_update": "Adesso {} è il tuo personaggio attivo!",
+    "char_edit": "Stai modificando le statistiche di {}.\nPremi END quando hai terminato.",
+    "char_edit_complete": "Il tuo personaggio è stato modificato con successo!",
+    "char_delete": "Il personaggio {} è stato cancellato!",
+    "char_close": "Nessuna modifica è stata effettuata!",
+
+    "new_start": "Stai per creare il tuo nuovo personaggio. Ti chiederò un po' di informazioni. Usa il comando /cancel in ogni momenot per uscire dalla creazione del personaggio.\nPer cominciare, quale sarà il nome del tuo personaggio?",
+    "new_strength": "Che nome magnifico!\nAdesso scrivi il valore della statistica FORZA...",
+    "new_dexterity": "Scrivi il valore della statistica DESTREZZA...",
+    "new_constitution": "Scrivi il valore della statistica COSTITUZIONE...",
+    "new_intelligence": "Scrivi il valore della statistica INTELLIGENZA...",
+    "new_wisdom": "Scrivi il valore della statistica SAGGEZZA...",
+    "new_charisma": "Scrivi il valore della statistica CARISMA...",
+    "new_proficiency": "Scrivi il valore della tua COMPETENZA...",
+    "new_cancel": "Le modifiche non sono state salvate. Non hai creato nessun personaggio.",
+    "new_end": "Il tuo nuovo personaggio è stato creato con successo!",
+
+    "dm_true": "Adesso SEI un Dungeon Master!",
+    "dm_false": "Adesso NON sei un Dungeon Master!",
+
+    "roll_menu": "Seleziona il dado da lanciare",
+    "roll_result": "Hai lanciato un d{} e hai ottenuto\n{}",
+
+    "check_deleted_character": "Il tuo personaggio attivo è stato cancellato. Usa il comando /char per impostare un altro personaggio!",
+    "check_first": "Di quale abilità vuoi fare un check?",
+    "check_last": "{} ha fatto un test di {} e ha ottenuto:\n{} + {} = {}",
+
+    "proficiency_start": "Clicca su una abilità per attivare/disattivare la sua proficiency.\nST indica il Tiro Salvezza",
+    "proficiency_true": "È stata attivata la proficiency sulla abilità {}\nPremi un'altra abilità per continuare o END per terminare.",
+    "proficiency_false": "È stata disattivata la proficiency sulla abilità {}\nPremi un'altra abilità per continuare o END per terminare.",
+    "proficiency_end": "Le tue modifiche sono state salvate con successo!",
+
+    "info_no_active" : "Non hai un personaggio attivo. Usa il comando /char per impostare il tuo personaggio!",
+
+    "attack_init": "Quale tipo di attacco vuoi fare?",
+    "attack_melee": "{} ha sferrato un attacco corpo a corpo!\nAggiungi la competenza se ce l'hai!\nAttacco = {} + {} = {}",
+    "attack_ranged": "{} ha sferrato un attacco a distanza!\nAggiungi la competenza se ce l'hai!\nAttacco = {} + {} = {}",
+    "attack_spell": "{} sta lanciando una magia!\nUsa il modificatore corretto per lanciare la tua magia!\nAggiungi il bonus magia se ce l'hai!\nIntelligenza = {} + {} = {}\nSaggezza = {} + {} = {}\nCarisma = {} + {} = {}\n"
+
+}
