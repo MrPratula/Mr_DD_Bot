@@ -45,8 +45,9 @@
     "info_no_active" : "Non hai un personaggio attivo. Usa il comando /char per impostare il tuo personaggio!",
 
     "attack_init": "Quale tipo di attacco vuoi fare?",
-    "attack_melee": "{} ha sferrato un attacco corpo a corpo!\nAggiungi la competenza se ce l'hai!\nAttacco = {} + {} = {}",
-    "attack_ranged": "{} ha sferrato un attacco a distanza!\nAggiungi la competenza se ce l'hai!\nAttacco = {} + {} = {}",
-    "attack_spell": "{} sta lanciando una magia!\nUsa il modificatore corretto per lanciare la tua magia!\nAggiungi il bonus magia se ce l'hai!\nIntelligenza = {} + {} = {}\nSaggezza = {} + {} = {}\nCarisma = {} + {} = {}\n"
-
+    "attack_choose_weapon": "Quale arma vuoi usare per sferrare il tuo attacco?",
+    "attack_no_weapons": "Non possiedi nessuna arma!",
+    "attack_normal": "{0} sta sferrando un attacco!\nArma = {1}\n\nAttacco = {2} + {3} + {4} = {5}\nVantaggio/svantaggio = {6} + {3} + {4} = {7}\n\nDamage = {8} = {9}",
+    "attack_choose_versatile": "Come vuoi sferrare questo attacco?",
+    "attack_choose_mod": "Quale modificatore vuoi usare per sferrare questo attacco?"
 }

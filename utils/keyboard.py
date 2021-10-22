@@ -136,10 +136,39 @@ def keyboard_proficiency():
 
 
 def keyboard_attack():
-
-    keyboard = [[InlineKeyboardButton("Melee  ⚔", callback_data="attack_melee"),
-                 InlineKeyboardButton("Ranged  🏹", callback_data="attack_ranged")],
-
-                [InlineKeyboardButton("Spell  🪄", callback_data="attack_spell")]]
+    keyboard = [[InlineKeyboardButton("Physical Attack  ⚔", callback_data="attack_1_weapon"),
+                 InlineKeyboardButton("Cast a Spell  🪄", callback_data="attack_1_spell")]]
 
     return keyboard
+
+
+def keyboard_attack_2(options, kind):
+    keyboard = []
+
+    for option in options:
+
+        data = "attack_2_" + kind + "_" + option
+
+        if keyboard == [] or len(keyboard[len(keyboard) - 1]) == 2:
+            keyboard.append([InlineKeyboardButton(option.capitalize(), callback_data=data)])
+        else:
+            keyboard[len(keyboard) - 1].append(InlineKeyboardButton(option.capitalize(), callback_data=data))
+
+    return keyboard
+
+
+def keyboard_attack_ask1():
+
+    keyboard = [[InlineKeyboardButton("One Hand", callback_data="attack_3_1"),
+                 InlineKeyboardButton("Two Hands", callback_data="attack_3_2")]]
+
+    return keyboard
+
+
+def keyboard_attack_ask2(strength, dexterity):
+
+    keyboard = [[InlineKeyboardButton("STR = "+str(strength), callback_data="attack_4_str"),
+                 InlineKeyboardButton("DEX = "+str(dexterity), callback_data="attack_4_dex")]]
+
+    return keyboard
+
