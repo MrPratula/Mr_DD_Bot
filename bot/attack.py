@@ -23,7 +23,7 @@ def attack(update, context):
     update.message.reply_text(text("attack_init"), reply_markup=reply_markup)
 
 
-def attack_button(update, context):
+def attack_choose_weapon(update, context):
 
     query = update.callback_query
     choice = query.data[9:]
@@ -222,8 +222,12 @@ def finesse_attack_button(update, context):
     query.edit_message_text(message)
 
 
+def attack_choose_spell(update, context):
+    print("choose a spell")
+
+
 def cast_spell_button(update, context):
-    print("spell")
+    print("spell casted")
 
 
 def get_attacks(choice, char_id):

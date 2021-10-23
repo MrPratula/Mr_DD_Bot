@@ -10,8 +10,8 @@ from bot.dm import dm
 from bot.roll import roll, button_roll
 from bot.check import check, first_check_button, second_check_button
 from bot.proficiency import proficiency, proficiency_button
-from bot.attack import attack, attack_button, make_attack_button, cast_spell_button, finesse_attack_button, \
-                        versatile_attack_button
+from bot.attack import attack, attack_choose_weapon, attack_choose_spell, make_attack_button, cast_spell_button, \
+                        finesse_attack_button, versatile_attack_button
 from bot.lang import language, language_button
 
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
@@ -41,20 +41,27 @@ if __name__ == '__main__':
     dispatcher.add_handler(CommandHandler('lang', language))
 
     dispatcher.add_handler(CallbackQueryHandler(button_roll, pattern="^d_.*$"))
+
     dispatcher.add_handler(CallbackQueryHandler(char_view_button, pattern="^char_view.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_active_button, pattern="^char_active.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_edit_button, pattern="^char_edit.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_stat_button, pattern="^char_stat.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_close, pattern="^char_close.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_delete_button, pattern="^char_delete.*$"))
+
     dispatcher.add_handler(CallbackQueryHandler(first_check_button, pattern="^check1_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(second_check_button, pattern="^check2_.*$"))
+
     dispatcher.add_handler(CallbackQueryHandler(proficiency_button, pattern="^prof_.*$"))
-    dispatcher.add_handler(CallbackQueryHandler(attack_button, pattern="^attack_1_.*$"))
+
+    dispatcher.add_handler(CallbackQueryHandler(attack_choose_weapon, pattern="attack_1_weapon"))
     dispatcher.add_handler(CallbackQueryHandler(make_attack_button, pattern="^attack_2_weapon_.*$"))
-    dispatcher.add_handler(CallbackQueryHandler(cast_spell_button, pattern="^attack_2_spell_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(versatile_attack_button, pattern="^attack_3_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(finesse_attack_button, pattern="^attack_4_.*$"))
+
+    dispatcher.add_handler(CallbackQueryHandler(attack_choose_spell, pattern="attack_1_spell"))
+    dispatcher.add_handler(CallbackQueryHandler(cast_spell_button, pattern="^attack_2_spell_.*$"))
+
     dispatcher.add_handler(CallbackQueryHandler(language_button, pattern="^lang_.*$"))
 
     dispatcher.add_handler(new_char_handler)    # /new
