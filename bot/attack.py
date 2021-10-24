@@ -1,4 +1,6 @@
 
+import re
+
 from telegram import InlineKeyboardMarkup
 
 from utils.get_active import get_active
@@ -23,7 +25,7 @@ def attack(update, context):
     update.message.reply_text(text("attack_init"), reply_markup=reply_markup)
 
 
-def attack_choose_weapon(update, context):
+def attack_choose_weapon_spell(update, context):
 
     query = update.callback_query
     choice = query.data[9:]
@@ -33,14 +35,27 @@ def attack_choose_weapon(update, context):
 
     keyboard = keyboard_attack_2(options, choice)
 
-    if not keyboard:
-        message = text("attack_no_weapons")
-        query.edit_message_text(message)
+    if choice == "weapon":
+
+        if not keyboard:
+            message = text("attack_no_weapons")
+            query.edit_message_text(message)
+
+        else:
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            message = text("attack_choose_weapon")
+            query.edit_message_text(message, reply_markup=reply_markup)
 
     else:
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        message = text("attack_choose_weapon")
-        query.edit_message_text(message, reply_markup=reply_markup)
+
+        if not keyboard:
+            message = text("attack_no_spells")
+            query.edit_message_text(message)
+
+        else:
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            message = text("attack_choose_spells")
+            query.edit_message_text(message, reply_markup=reply_markup)
 
 
 def make_attack_button(update, context):
@@ -222,12 +237,29 @@ def finesse_attack_button(update, context):
     query.edit_message_text(message)
 
 
-def attack_choose_spell(update, context):
-    print("choose a spell")
-
-
 def cast_spell_button(update, context):
-    print("spell casted")
+
+    query = update.callback_query
+    spell_name = query.data[15:]
+    char_id = context.user_data["char_id"]
+
+    db = connect()
+    cursor = db.cursor(prepared=True)
+
+    sql_query = "SELECT text FROM cantrip WHERE name = %s"
+
+    try:
+        cursor.execute(sql_query, (spell_name,))
+    except:
+        print("can not retriever cantrip text")
+
+    result = cursor.fetchall()
+    cantrip_text = result[0][0]
+
+    message = parse_spell(cantrip_text, char_id)
+
+    context.user_data.clear()
+    query.edit_message_text(message)
 
 
 def get_attacks(choice, char_id):
@@ -241,7 +273,7 @@ def get_attacks(choice, char_id):
         sql_query = "SELECT weapon FROM has_weapon WHERE char_id = %s "
 
     else:  # choice == 'spell'
-        print("spell")
+        sql_query = "SELECT spell_name FROM has_spell WHERE char_id = %s "
 
     try:
         cursor.execute(sql_query, (char_id,))
@@ -310,3 +342,103 @@ def is_proficient(char_id, weapon):
             return True
         else:
             return False
+
+
+def parse_spell(rule, char_id):
+
+    db = connect()
+    cursor = db.cursor(prepared=True)
+
+    query = "SELECT char_name, level, intelligence, wisdom, charisma, proficiency, class " \
+            "FROM `character` WHERE char_id = %s"
+
+    try:
+        cursor.execute(query, (char_id,))
+    except:
+        print("can not retriever char name")
+
+    result = cursor.fetchall()
+    char_name = result[0][0]
+
+    try:
+        char_level = int(result[0][1])
+    except:
+        char_level = 1
+
+    rule = re.sub("{name}", char_name.capitalize(), rule)
+    rolls = re.findall("{xd+[0-9]}", rule)
+    rolls_number = get_rolls(char_level)
+
+    # FIX HERE
+
+    for r in rolls:
+
+        r = r.replace("x", str(rolls_number))
+        r = r.replace("{", "")
+        r = r.replace("}", "")
+
+        rolls_array = roll(r)
+        rolls_string = " + ".join(str(n) for n in rolls_array)
+        rolls_total = 0
+        for i in rolls_array:
+            rolls_total += i
+
+        final = rolls_string + " = " + str(rolls_total)
+
+        rule = re.sub("{xd+[0-9]}", final, rule, 1)
+
+    # TILL HERE
+
+    intelligence = result[0][2]
+    wisdom = result[0][3]
+    charisma = result[0][4]
+    proficiency = result[0][5]
+    character_class = result[0][6]
+
+    query = "SELECT spellcasting FROM class WHERE name = %s"
+
+    try:
+        cursor.execute(query, (character_class,))
+    except:
+        print("can not retriever class spellcasting ability")
+
+    result = cursor.fetchall()
+    spellcasting_ability = result[0][0]
+
+    print(spellcasting_ability)
+
+    if spellcasting_ability == "intelligence":
+        spellcasting_ability = intelligence // 2 - 5
+    elif spellcasting_ability == "wisdom":
+        spellcasting_ability = wisdom // 2 - 5
+    else:
+        spellcasting_ability = charisma // 2 - 5
+
+    die = roll("d20")[0]
+
+    attack_text = "{} + {} + {} = {}".format(str(die), str(proficiency), str(spellcasting_ability),
+                                                 die + proficiency + spellcasting_ability)
+
+    rule = re.sub("{spell_attack}", attack_text, rule)
+
+    save_dc_text = "8 + {} + {} = {}".format(str(proficiency), spellcasting_ability,
+                                             8 + proficiency + spellcasting_ability)
+
+    rule = re.sub("{spell_save_dc}", save_dc_text, rule)
+
+    print(intelligence)
+    print(spellcasting_ability)
+
+    return rule
+
+
+def get_rolls(level):
+
+    if 5 <= level < 11:
+        return 2
+    elif 11 <= level < 17:
+        return 3
+    elif level > 17:
+        return 4
+    else:
+        return 1

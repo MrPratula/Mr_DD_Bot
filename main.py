@@ -10,7 +10,7 @@ from bot.dm import dm
 from bot.roll import roll, button_roll
 from bot.check import check, first_check_button, second_check_button
 from bot.proficiency import proficiency, proficiency_button
-from bot.attack import attack, attack_choose_weapon, attack_choose_spell, make_attack_button, cast_spell_button, \
+from bot.attack import attack, attack_choose_weapon_spell, make_attack_button, cast_spell_button, \
                         finesse_attack_button, versatile_attack_button
 from bot.lang import language, language_button
 
@@ -54,12 +54,11 @@ if __name__ == '__main__':
 
     dispatcher.add_handler(CallbackQueryHandler(proficiency_button, pattern="^prof_.*$"))
 
-    dispatcher.add_handler(CallbackQueryHandler(attack_choose_weapon, pattern="attack_1_weapon"))
+    dispatcher.add_handler(CallbackQueryHandler(attack_choose_weapon_spell, pattern="attack_1_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(make_attack_button, pattern="^attack_2_weapon_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(versatile_attack_button, pattern="^attack_3_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(finesse_attack_button, pattern="^attack_4_.*$"))
 
-    dispatcher.add_handler(CallbackQueryHandler(attack_choose_spell, pattern="attack_1_spell"))
     dispatcher.add_handler(CallbackQueryHandler(cast_spell_button, pattern="^attack_2_spell_.*$"))
 
     dispatcher.add_handler(CallbackQueryHandler(language_button, pattern="^lang_.*$"))

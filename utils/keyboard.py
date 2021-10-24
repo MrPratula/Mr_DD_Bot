@@ -150,9 +150,10 @@ def keyboard_attack_2(options, kind):
         data = "attack_2_" + kind + "_" + option
 
         if keyboard == [] or len(keyboard[len(keyboard) - 1]) == 2:
-            keyboard.append([InlineKeyboardButton(option.capitalize(), callback_data=data)])
+            keyboard.append([InlineKeyboardButton(option.capitalize().replace("_", " "), callback_data=data)])
         else:
-            keyboard[len(keyboard) - 1].append(InlineKeyboardButton(option.capitalize(), callback_data=data))
+            keyboard[len(keyboard) - 1].append(InlineKeyboardButton(option.capitalize().replace("_", " "),
+                                                                    callback_data=data))
 
     return keyboard
 
