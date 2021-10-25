@@ -366,28 +366,27 @@ def parse_spell(rule, char_id):
         char_level = 1
 
     rule = re.sub("{name}", char_name.capitalize(), rule)
-    rolls = re.findall("{xd+[0-9]}", rule)
+
+    try:
+        roll_key = re.findall("{xd[0-9]+}", rule)[0]
+    except IndexError:
+        roll_key = "{xd8}"
+
     rolls_number = get_rolls(char_level)
 
-    # FIX HERE
+    roll_key = roll_key.replace("x", str(rolls_number))
+    roll_key = roll_key.replace("{", "")
+    roll_key = roll_key.replace("}", "")
 
-    for r in rolls:
+    rolls_array = roll(roll_key)
+    rolls_string = " + ".join(str(n) for n in rolls_array)
+    rolls_total = 0
+    for i in rolls_array:
+        rolls_total += i
 
-        r = r.replace("x", str(rolls_number))
-        r = r.replace("{", "")
-        r = r.replace("}", "")
+    final = rolls_string + " = " + str(rolls_total)
 
-        rolls_array = roll(r)
-        rolls_string = " + ".join(str(n) for n in rolls_array)
-        rolls_total = 0
-        for i in rolls_array:
-            rolls_total += i
-
-        final = rolls_string + " = " + str(rolls_total)
-
-        rule = re.sub("{xd+[0-9]}", final, rule, 1)
-
-    # TILL HERE
+    rule = re.sub("{xd[0-9]+}", final, rule)
 
     intelligence = result[0][2]
     wisdom = result[0][3]
@@ -405,8 +404,6 @@ def parse_spell(rule, char_id):
     result = cursor.fetchall()
     spellcasting_ability = result[0][0]
 
-    print(spellcasting_ability)
-
     if spellcasting_ability == "intelligence":
         spellcasting_ability = intelligence // 2 - 5
     elif spellcasting_ability == "wisdom":
@@ -414,20 +411,23 @@ def parse_spell(rule, char_id):
     else:
         spellcasting_ability = charisma // 2 - 5
 
-    die = roll("d20")[0]
+    die1 = roll("d20")[0]
+    die2 = roll("d20")[0]
 
-    attack_text = "{} + {} + {} = {}".format(str(die), str(proficiency), str(spellcasting_ability),
-                                                 die + proficiency + spellcasting_ability)
+    attack_text1 = "{} + {} + {} = {}".format(str(die1), str(proficiency), str(spellcasting_ability),
+                                                 die1 + proficiency + spellcasting_ability)
 
-    rule = re.sub("{spell_attack}", attack_text, rule)
+    rule = re.sub("{spell_attack}", attack_text1, rule, 1)
+
+    attack_text2 = "{} + {} + {} = {}".format(str(die2), str(proficiency), str(spellcasting_ability),
+                                              die2 + proficiency + spellcasting_ability)
+
+    rule = re.sub("{spell_attack}", attack_text2, rule, 1)
 
     save_dc_text = "8 + {} + {} = {}".format(str(proficiency), spellcasting_ability,
                                              8 + proficiency + spellcasting_ability)
 
     rule = re.sub("{spell_save_dc}", save_dc_text, rule)
-
-    print(intelligence)
-    print(spellcasting_ability)
 
     return rule
 
