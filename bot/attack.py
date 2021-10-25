@@ -136,6 +136,7 @@ def make_attack_button(update, context):
         roll2 = roll("d20")[0]
         roll3 = roll(dmg)
         damage = " + ".join(str(n) for n in roll3)
+        damage = damage + " + " + str(mod_value)
         tot_damage = 0
         for n in roll3:
             tot_damage += int(n)
@@ -149,7 +150,7 @@ def make_attack_button(update, context):
                                                roll2,
                                                roll2 + mod_value + proficiency,
                                                damage,
-                                               tot_damage)
+                                               tot_damage + mod_value)
 
         context.user_data.clear()
         query.edit_message_text(message)
@@ -177,6 +178,7 @@ def versatile_attack_button(update, context):
     roll2 = roll("d20")[0]
     roll3 = roll(var)
     damage = " + ".join(str(n) for n in roll3)
+    damage = damage + " + " + str(mod_value)
     tot_damage = 0
     for n in roll3:
         tot_damage += int(n)
@@ -190,7 +192,7 @@ def versatile_attack_button(update, context):
                                            roll2,
                                            roll2 + mod_value + proficiency,
                                            damage,
-                                           tot_damage)
+                                           tot_damage + mod_value)
 
     context.user_data.clear()
     query.edit_message_text(message)
@@ -218,6 +220,7 @@ def finesse_attack_button(update, context):
     roll2 = roll("d20")[0]
     roll3 = roll(dmg)
     damage = " + ".join(str(n) for n in roll3)
+    damage = damage + " + " + str(mod_value)
     tot_damage = 0
     for n in roll3:
         tot_damage += int(n)
@@ -231,7 +234,7 @@ def finesse_attack_button(update, context):
                                            roll2,
                                            roll2 + mod_value + proficiency,
                                            damage,
-                                           tot_damage)
+                                           tot_damage + mod_value)
 
     context.user_data.clear()
     query.edit_message_text(message)
@@ -265,8 +268,6 @@ def cast_spell_button(update, context):
 def get_attacks(choice, char_id):
     db = connect()
     cursor = db.cursor(prepared=True)
-
-    sql_query = ""
 
     if choice == "weapon":
 
