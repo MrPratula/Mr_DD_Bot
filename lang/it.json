@@ -51,5 +51,10 @@
     "attack_choose_versatile": "Come vuoi sferrare questo attacco?",
     "attack_choose_mod": "Quale modificatore vuoi usare per sferrare questo attacco?",
     "attack_choose_spells": "Quale magia vuoi lanciare?",
-    "attack_no_spells": "Non conosci nessuna magia!"
+    "attack_no_spells": "Non conosci nessuna magia!",
+
+    "life_init": "Usa i bottoni per modificare la vita di {}, poi premi il pulsante Save",
+    "life_up": "È stato aggiunto un HP a {}",
+    "life_down": "{} ha perso un HP",
+    "life_end": "Gli HP di {} sono stati aggiornati"
 }

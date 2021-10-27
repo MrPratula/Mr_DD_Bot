@@ -173,3 +173,13 @@ def keyboard_attack_ask2(strength, dexterity):
 
     return keyboard
 
+
+def keyboard_life(life):
+
+    keyboard = [[InlineKeyboardButton("💔", callback_data="life_down"),
+                 InlineKeyboardButton(life, callback_data="life_none"),
+                 InlineKeyboardButton("💚", callback_data="life_up")],
+
+                [InlineKeyboardButton("🟢    Save    🟢", callback_data="life_end")]]
+
+    return keyboard

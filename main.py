@@ -13,6 +13,7 @@ from bot.proficiency import proficiency, proficiency_button
 from bot.attack import attack, attack_choose_weapon_spell, make_attack_button, cast_spell_button, \
                         finesse_attack_button, versatile_attack_button
 from bot.lang import language, language_button
+from bot.life import life, life_button
 
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
@@ -39,6 +40,7 @@ if __name__ == '__main__':
     dispatcher.add_handler(CommandHandler('prof', proficiency))
     dispatcher.add_handler(CommandHandler('attack', attack))
     dispatcher.add_handler(CommandHandler('lang', language))
+    dispatcher.add_handler(CommandHandler('life', life))
 
     dispatcher.add_handler(CallbackQueryHandler(button_roll, pattern="^d_.*$"))
 
@@ -62,6 +64,8 @@ if __name__ == '__main__':
     dispatcher.add_handler(CallbackQueryHandler(cast_spell_button, pattern="^attack_2_spell_.*$"))
 
     dispatcher.add_handler(CallbackQueryHandler(language_button, pattern="^lang_.*$"))
+
+    dispatcher.add_handler(CallbackQueryHandler(life_button, pattern="^life_.*$"))
 
     dispatcher.add_handler(new_char_handler)    # /new
 
