@@ -1,5 +1,60 @@
 {
-    "start" : "esto es un messaggio en espanol... piu o meno",
+    "start_new":   "¡Hola! Soy Mr D&D y te asistiré en tu aventura de Dungeons and Dragons\n¡Utiliza el comando /help para más informaciones! ",
 
-    "lang_update": "Espanol not ready yet!"
+    "start":      "¡Bienvenido de vuelta {}!. Utiliza el comando /help para más informaciones",
+
+    "help":       "Para seleccionar un idioma utiliza el comando /lang  \uD83C\uDDFA\uD83C\uDDF8\nPara crear un nuevo personaje utiliza el comando  /new  \uD83E\uDDCD\nPara gestionar tus personajes utiliza /char  \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\nPara configurar tus competencias utiliza  /prof  \uD83E\uDDD1\u200D\uD83D\uDD27\nPara activar/desactivar el modo Dungeon Máster utiliza  /dm  \uD83D\uDC68\u200D\uD83C\uDFEB\nPara testar utiliza  /check  \uD83E\uDD37\nPara lanzar un dado utiliza  /roll  \uD83C\uDFB2\nPara lanzar un ataque utiliza /attack  \uD83D\uDC4A",
+
+    "lang_update": "Idioma español correctamente configurado",
+
+    "char_none":   "De momento no tienes ningún personaje.\nPara crear un nuevo personaje utiliza el comando /new.",
+    "char_some":   "Nombre - visualiza personaje\n✅ - activa personaje\n\uD83D\uDD27 - modifica personaje\n❌ - elimina personaje.\nUtiliza el comando /new para crear un nuevo personaje .",
+    "char_view":  "{}\nFuerza = {}\nDestreza = {}\nConstitución = {}\nInteligencia = {}\nSabiduría = {}\nCarisma = {}\nCompetencia = {}\nTienes competencia en las siguientes habilidades:\n{}",
+    "char_update": "¡Ahora {} es tu personaje activo!",
+    "char_edit": "Estás modificando las estadísticas de {}.\nPulsa END cuando has terminado.",
+    "char_edit_complete": "¡Tu personaje ha sido modificado correctamente!",
+    "char_delete": "¡El personaje {} ha sido eliminado!",
+    "char_close": "¡No se ha realizado ninguna modifica!",
+
+    "new_start": "Vas a crear tu nuevo personaje. Te pediré un poco de información. Utiliza el comando /cancel en cualquier momento para salir de la creación del personaje.\n¡Empezamos! ¿Cuál será el nombre de tu personaje?",
+    "new_strength": "¡Que nombre maravilloso!\nAhora indica el valor de la estadística FUERZA...",
+    "new_dexterity": "Ahora indica el valor de la estadística CONSTITUCION...",
+    "new_constitution": "Ahora indica el valor de la estadística DESTREZA...",
+    "new_intelligence": "Ahora indica el valor de la estadística INTELIGENCIA...",
+    "new_wisdom": "Ahora indica el valore de la estadística SABIDURIA...",
+    "new_charisma": "Ahora indica el valor de la estadística CARISMA...",
+    "new_proficiency": "Ahora indica el valor de la estadística COMPETENCIA...",
+    "new_cancel": "Las modificas no han sido guardadas. No has creado ningún personaje.",
+    "new_end": "¡Tu nuevo personaje se ha creado con éxito!",
+
+    "dm_true": "¡Ahora ERES un Dungeon Máster!",
+    "dm_false": "¡Ahora NO eres un Dungeon Máster!",
+
+    "roll_menu": "Selecciona el dado a lanzar",
+    "roll_result": "Has lanzado un d{} y has conseguido\n{}",
+
+    "check_deleted_character": "Tu personaje activo ha sido eliminado. ¡Utiliza el comando /char para configurar otro personaje!",
+    "check_first": "¿De cual habilidad quieres hacer un check?",
+    "check_last": "{} ha hecho un check de {} y ha conseguido:\n{} + {} = {}",
+
+    "proficiency_start": "Haga clic de una habilidad para activar/desactivar su dominio.\nST Indica el Tiro de Salvación",
+    "proficiency_true": "Ha sido activado el dominio de la habilidad {}\nPulsa otra habilidad para proseguir o END para acabar.",
+    "proficiency_false": "Ha sido desactivado el dominio de la habilidad {}\nPulsa otra habilidad para proseguir o END para acabar.",
+    "proficiency_end": "¡Tus modificas han sido guardados con éxito!",
+
+    "info_no_active" : "No tienes un personaje activo. ¡Utiliza el comando  /char para configurar tu personaje!",
+
+    "attack_init": "¿Qué tipo de ataque quieres lanzar?",
+    "attack_choose_weapon": "¿Qué arma quieres utilizar para lanzar tu ataque? ",
+    "attack_no_weapons": "¡No posees ninguna arma!",
+    "attack_normal": "¡{0} está atacando! \nArma = {1}\n\nAtaque = {2} + {3} + {4} = {5}\nBeneficio/Inconveniente = {6} + {3} + {4} = {7}\n\nDaño = {8} = {9}",
+    "attack_choose_versatile": "¿Cómo quieres lanzar tu ataque?",
+    "attack_choose_mod": "¿Cuál modificador quieres utilizar para lanzar este ataque?",
+    "attack_choose_spells": "¿Cuál magia quieres lanzar?",
+    "attack_no_spells": "¡No conoces ninguna magia!",
+
+    "life_init": "Utiliza los botones para modificar la vida de {}, después pulsa Save",
+    "life_up": "Un HP ha sido añadido a {}",
+    "life_down": "{} ha perdido un HP",
+    "life_end": "Los HP de {} han sido actualizados"
 }
