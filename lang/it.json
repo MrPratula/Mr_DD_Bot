@@ -16,7 +16,7 @@
     "char_delete": "Il personaggio {} è stato cancellato!",
     "char_close": "Nessuna modifica è stata effettuata!",
 
-    "new_start": "Stai per creare il tuo nuovo personaggio. Ti chiederò un po' di informazioni. Usa il comando /cancel in ogni momenot per uscire dalla creazione del personaggio.\nPer cominciare, quale sarà il nome del tuo personaggio?",
+    "new_start": "Stai per creare il tuo nuovo personaggio. Ti chiederò un po' di informazioni. Usa il comando /cancel in ogni momento per uscire dalla creazione del personaggio.\nPer cominciare, quale sarà il nome del tuo personaggio?",
     "new_strength": "Che nome magnifico!\nAdesso scrivi il valore della statistica FORZA...",
     "new_dexterity": "Scrivi il valore della statistica DESTREZZA...",
     "new_constitution": "Scrivi il valore della statistica COSTITUZIONE...",

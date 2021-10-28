@@ -1,5 +1,60 @@
 {
-    "start": "this is an english message",
+    "start_new":   "Hi, I am Mr D&D and I'll follow you in your Dungeons and Dragons' adventure!\nUse the command /help for more information!",
 
-    "lang_update": "English not uploaded yet"
+    "start":      "Welcome back {}. Use the command /help for more information!",
+
+    "help":       "Use /lang to select the language  \uD83C\uDDFA\uD83C\uDDF8\nUse /new to create a new character  \uD83E\uDDCD\nUse /char to manage your characters  \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\nUse /prof to manage your proficiency  \uD83E\uDDD1\u200D\uD83D\uDD27\nUse /dm to activate/deactivate the DM mode  \uD83D\uDC68\u200D\uD83C\uDFEB\nUse /check to make some checks  \uD83E\uDD37\nUse /roll to roll a die  \uD83C\uDFB2\nUse /attack to make an attack  \uD83D\uDC4A",
+
+    "lang_update": "English language set up successfully!",
+
+    "char_none":   "You don't own any character right now.\nUse /new to create a new one.",
+    "char_some":   "Name - view character\n✅ - activate character\n\uD83D\uDD27 - edit character\n❌ - delete character.\nUse /new to create a new character",
+    "char_view":  "{}\nStrength = {}\nDexterity = {}\nConstitution = {}\nIntelligence = {}\nWisdom = {}\nCharisma = {}\nProficiency = {}\nYou have proficiency with the following skills:\n{}",
+    "char_update": "Now {} is your active character!",
+    "char_edit": "You are editing {}.\nTap END when you finish.",
+    "char_edit_complete": "Your character has been edited successfully!",
+    "char_delete": "Character {} has been deleted!",
+    "char_close": "No changes has been made!",
+
+    "new_start": "You are going to create a new character. I'll ask you some info. Use /cancel at any time to quit this process.\nFirst question, tell me your character's name!",
+    "new_strength": "What a wonderful name!\nNow tell me his STRENGTH...",
+    "new_dexterity": "Type your character DEXTERITY...",
+    "new_constitution": "Type your character CONSTITUTION...",
+    "new_intelligence": "Type your character INTELLIGENCE...",
+    "new_wisdom": "Type your character WISDOM...",
+    "new_charisma": "Type your character CHARISMA...",
+    "new_proficiency": "Scrivi il valore della tua PROFICIENCY...",
+    "new_cancel": "No changes had been made. You didn't create any character",
+    "new_end": "Your new character has been created!",
+
+    "dm_true": "Now you ARE a Dungeon Master!",
+    "dm_false": "Now you are NOT a Dungeon Master!",
+
+    "roll_menu": "Select a die to roll",
+    "roll_result": "You rolled a d{} and got\n{}",
+
+    "check_deleted_character": "Your active character has been deleted. Use /char to set as active a new character!",
+    "check_first": "Which check do you want to perform?",
+    "check_last": "{} made a {} check and got:\n{} + {} = {}",
+
+    "proficiency_start": "Click on an ability to activate/deactivate that proficiency.\nST is the saving throw",
+    "proficiency_true": "Proficiency on {} activate\nPress on another ability or END to quit.",
+    "proficiency_false": "Proficiency on {} deactivate\nPress on another ability or END to quit.",
+    "proficiency_end": "Your changes has been saved!",
+
+    "info_no_active" : "You don't have an active character. Use /char to set an active one!",
+
+    "attack_init": "Which kind of attack do you want to perform?",
+    "attack_choose_weapon": "Which weapon do you want to use?",
+    "attack_no_weapons": "You don't own any weapon!",
+    "attack_normal": "{0} is performing an attack!\nWeapon = {1}\n\nAttack = {2} + {3} + {4} = {5}\nAdv/DisAdv = {6} + {3} + {4} = {7}\n\nDamage = {8} = {9}",
+    "attack_choose_versatile": "How do you want to perform this attack?",
+    "attack_choose_mod": "Which ability modifier do you want to use?",
+    "attack_choose_spells": "Which spell do you want to cast?",
+    "attack_no_spells": "You don't know any spell!",
+
+    "life_init": "Use buttons to edit {}'s life points, then press SAVE",
+    "life_up": "{} got an HP",
+    "life_down": "{} lost an HP",
+    "life_end": "{}'s HP has been updated"
 }
