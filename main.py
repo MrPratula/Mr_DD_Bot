@@ -14,6 +14,7 @@ from bot.attack import attack, attack_choose_weapon_spell, make_attack_button, c
                         finesse_attack_button, versatile_attack_button
 from bot.lang import language, language_button
 from bot.life import life, life_button
+from bot.config import config, config_first_button, config_spell_button, config_weap_button
 
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
@@ -41,6 +42,7 @@ if __name__ == '__main__':
     dispatcher.add_handler(CommandHandler('attack', attack))
     dispatcher.add_handler(CommandHandler('lang', language))
     dispatcher.add_handler(CommandHandler('life', life))
+    dispatcher.add_handler(CommandHandler('cfg', config))
 
     dispatcher.add_handler(CallbackQueryHandler(button_roll, pattern="^d_.*$"))
 
@@ -66,6 +68,10 @@ if __name__ == '__main__':
     dispatcher.add_handler(CallbackQueryHandler(language_button, pattern="^lang_.*$"))
 
     dispatcher.add_handler(CallbackQueryHandler(life_button, pattern="^life_.*$"))
+
+    dispatcher.add_handler(CallbackQueryHandler(config_first_button, pattern="^config_1_.*$"))
+    dispatcher.add_handler(CallbackQueryHandler(config_weap_button, pattern="^config_2_weap_.*$"))
+    dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="^config_2_spell_.*$"))
 
     dispatcher.add_handler(new_char_handler)    # /new
 

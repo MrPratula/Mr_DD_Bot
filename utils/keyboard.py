@@ -183,3 +183,44 @@ def keyboard_life(life):
                 [InlineKeyboardButton("🟢    Save    🟢", callback_data="life_end")]]
 
     return keyboard
+
+
+def keyboard_config():
+
+    keyboard = [[InlineKeyboardButton("Spells   🪄", callback_data="config_1_spell"),
+                 InlineKeyboardButton("Weapons   ⚔", callback_data="config_1_weap")]]
+
+    return keyboard
+
+
+def keyboard_config_2(options, owns, choice):
+
+    keyboard = []
+    char_owns = []
+
+    for own in owns:
+        char_owns.append(own[0])
+
+    for option in options:
+
+        word = option[0]
+        data = "config_2_{}_{}".format(choice, word)
+
+        if keyboard == [] or len(keyboard[len(keyboard) - 1]) == 2:
+            if word in char_owns:
+                keyboard.append([InlineKeyboardButton(word.capitalize().replace("_", " ") + "   🟢",
+                                                      callback_data=data)])
+            else:
+                keyboard.append([InlineKeyboardButton(word.capitalize().replace("_", " ") + "   🔴",
+                                                      callback_data=data)])
+
+        else:
+            if word in char_owns:
+                keyboard[len(keyboard) - 1].append(InlineKeyboardButton(word.capitalize().replace("_", " ") + "   🟢",
+                                                                        callback_data=data))
+            else:
+                keyboard[len(keyboard) - 1].append(InlineKeyboardButton(word.capitalize().replace("_", " ") + "   🔴",
+                                                                        callback_data=data))
+    keyboard.append([InlineKeyboardButton("⚪     END     ⚪", callback_data="config_2_{}_end".format(choice))])
+
+    return keyboard

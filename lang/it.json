@@ -56,5 +56,12 @@
     "life_init": "Usa i bottoni per modificare la vita di {}, poi premi il pulsante Save",
     "life_up": "È stato aggiunto un HP a {}",
     "life_down": "{} ha perso un HP",
-    "life_end": "Gli HP di {} sono stati aggiornati"
+    "life_end": "Gli HP di {} sono stati aggiornati",
+
+    "config_start": "Scegli se vuoi modificare le magie o gli oggetti di {}",
+    "config_spell_1": "Queste sono le magie disponibili. Clicca su una di queste per impararla o dimenticarla",
+    "config_weapon_1": "Queste sono le armi che disponibili. Clicca su una di queste per possederla o non possederla",
+    "config_spell_end": "Le magie di {} sono state aggiornate con successo!",
+    "config_weap_end": "Le armi di {} sono state aggiornate con successo!"
+
 }
