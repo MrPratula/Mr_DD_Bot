@@ -55,5 +55,6 @@ def class_select(update, context):
     except:
         print("can not update character class")
 
+    context.user_data.clear()
     message = text("class_update").format(class_click.capitalize(), char_name.capitalize())
     c_query.edit_message_text(message)
