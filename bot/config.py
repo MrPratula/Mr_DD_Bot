@@ -23,7 +23,7 @@ def config(update, context):
 
     keyboard = keyboard_config()
     reply_markup = InlineKeyboardMarkup(keyboard)
-    message = text("config_start").format(char_name).capitalize()
+    message = text("config_start").format(char_name.capitalize())
 
     update.message.reply_text(message, reply_markup=reply_markup)
 

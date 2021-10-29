@@ -60,8 +60,11 @@
 
     "config_start": "Scegli se vuoi modificare le magie o gli oggetti di {}",
     "config_spell_1": "Queste sono le magie disponibili. Clicca su una di queste per impararla o dimenticarla",
-    "config_weapon_1": "Queste sono le armi che disponibili. Clicca su una di queste per possederla o non possederla",
+    "config_weapon_1": "Queste sono le armi che sono disponibili. Clicca su una di queste per possederla o non possederla",
     "config_spell_end": "Le magie di {} sono state aggiornate con successo!",
-    "config_weap_end": "Le armi di {} sono state aggiornate con successo!"
+    "config_weap_end": "Le armi di {} sono state aggiornate con successo!",
+
+    "class_start": "Seleziona la classe di {}",
+    "class_update": "È ststa impostata la classe {} per {}"
 
 }

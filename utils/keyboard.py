@@ -224,3 +224,21 @@ def keyboard_config_2(options, owns, choice):
     keyboard.append([InlineKeyboardButton("⚪     END     ⚪", callback_data="config_2_{}_end".format(choice))])
 
     return keyboard
+
+
+def keyboard_class(options):
+    keyboard = []
+
+    for option in options:
+
+        word = option[0]
+        data = "class_{}".format(word)
+
+        if keyboard == [] or len(keyboard[len(keyboard) - 1]) == 2:
+            keyboard.append([InlineKeyboardButton(word.capitalize().replace("_", " "), callback_data=data)])
+        else:
+            keyboard[len(keyboard) - 1].append(InlineKeyboardButton(word.capitalize().replace("_", " "),
+                                                                    callback_data=data))
+
+    return keyboard
+
