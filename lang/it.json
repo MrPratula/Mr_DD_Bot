@@ -3,7 +3,7 @@
 
     "start":      "Bentornato {}. Usa il comando /help per avere più informazioni",
 
-    "help":       "Per selezionare la lingua usa il comando /lang  \uD83C\uDDFA\uD83C\uDDF8\nPer creare un nuovo personaggio usa il comando /new  \uD83E\uDDCD\nPer gestire i tuoi personaggi usa /char  \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\nPer impostare le tue competenze usa /prof  \uD83E\uDDD1\u200D\uD83D\uDD27\nPer attivare/disattivare la modalita Dungeon Master usa /dm  \uD83D\uDC68\u200D\uD83C\uDFEB\nPer fare dei test usa /check  \uD83E\uDD37\nPer lanciare un dado usa /roll  \uD83C\uDFB2\nPer sferrare un attacco usa /attack  \uD83D\uDC4A",
+    "help":       "Se non capisci quello che dico, usa il comando /lang \uD83C\uDDFA\uD83C\uDDF8\n\n/new crea un nuovo personaggio \uD83C\uDD95\n/char visualizza e imposta il tuo personaggio \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\n/prof imposta le tue proficiency \uD83D\uDEE0\n/life imposta i tuoi punti vita \uD83D\uDC9A\n/cfg imposta le tue armi e le tue magie \uD83D\uDD2B\n/class imposta la tua classe \uD83E\uDDEA\n\n/roll lancia un dado \uD83C\uDFB2\n/check fai un test \uD83D\uDD79\n/attack fai un attacco ⚔\n\n/dm imposta lo stato di Dunegoen Master ✏ ",
 
     "lang_update": "Lingua Italiano impostata correttamente!",
 

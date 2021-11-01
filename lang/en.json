@@ -3,7 +3,7 @@
 
     "start":      "Welcome back {}. Use the command /help for more information!",
 
-    "help":       "Use /lang to select the language  \uD83C\uDDFA\uD83C\uDDF8\nUse /new to create a new character  \uD83E\uDDCD\nUse /char to manage your characters  \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\nUse /prof to manage your proficiency  \uD83E\uDDD1\u200D\uD83D\uDD27\nUse /dm to activate/deactivate the DM mode  \uD83D\uDC68\u200D\uD83C\uDFEB\nUse /check to make some checks  \uD83E\uDD37\nUse /roll to roll a die  \uD83C\uDFB2\nUse /attack to make an attack  \uD83D\uDC4A",
+    "help":       "If you don't understand me use /lang \uD83C\uDDFA\uD83C\uDDF8\n\n/new create new character \uD83C\uDD95\n/char view and set as active your character \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\n/prof set your proficiency \uD83D\uDEE0\n/life set your life points \uD83D\uDC9A\n/cfg set your weapons and spells \uD83D\uDD2B\n/class set your class \uD83E\uDDEA\n\n/roll roll a die \uD83C\uDFB2\n/check make a check \uD83D\uDD79\n/attack make an attack ⚔\n\n/dm set you as Dungeon Master ✏ ",
 
     "lang_update": "English language set up successfully!",
 
