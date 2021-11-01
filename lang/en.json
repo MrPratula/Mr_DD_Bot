@@ -56,5 +56,14 @@
     "life_init": "Use buttons to edit {}'s life points, then press SAVE",
     "life_up": "{} got an HP",
     "life_down": "{} lost an HP",
-    "life_end": "{}'s HP has been updated"
+    "life_end": "{}'s HP has been updated",
+
+    "config_start": "Do you want to edit {}'s spells or weapons?",
+    "config_spell_1": "Click on a spell to learn it or forgot it",
+    "config_weapon_1": "Click on a weapon to own it or leave it",
+    "config_spell_end": "{}'s spells has been saved",
+    "config_weap_end": "{}'s weapons has been saved",
+
+    "class_start": "Select {}'s class",
+    "class_update": "{} has been set for {}"
 }
