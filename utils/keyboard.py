@@ -102,17 +102,17 @@ def keyboard_sub_ability(ability):
 
 
 def keyboard_proficiency():
-    keyboard = [[InlineKeyboardButton("Strength ST", callback_data="prof_str"),
+    keyboard = [[InlineKeyboardButton("Strength ST", callback_data="prof_str_sav"),
                  InlineKeyboardButton("Athletics", callback_data="prof_ath")],
 
-                [InlineKeyboardButton("Dexterity ST", callback_data="prof_dex"),
+                [InlineKeyboardButton("Dexterity ST", callback_data="prof_dex_sav"),
                  InlineKeyboardButton("Acrobatics", callback_data="prof_acr")],
 
                 [InlineKeyboardButton("Sleight of Hand", callback_data="prof_sle"),
                  InlineKeyboardButton("Stealth", callback_data="prof_stl")],
 
-                [InlineKeyboardButton("Constitution ST", callback_data="prof_con"),
-                 InlineKeyboardButton("Intelligence ST", callback_data="prof_int")],
+                [InlineKeyboardButton("Constitution ST", callback_data="prof_con_sav"),
+                 InlineKeyboardButton("Intelligence ST", callback_data="prof_int_sav")],
 
                 [InlineKeyboardButton("Arcana", callback_data="prof_arc"),
                  InlineKeyboardButton("History", callback_data="prof_his")],
@@ -121,7 +121,7 @@ def keyboard_proficiency():
                  InlineKeyboardButton("Nature", callback_data="prof_nat")],
 
                 [InlineKeyboardButton("Religion", callback_data="prof_rel"),
-                 InlineKeyboardButton("Wisdom ST", callback_data="prof_wis")],
+                 InlineKeyboardButton("Wisdom ST", callback_data="prof_wis_sav")],
 
                 [InlineKeyboardButton("Animal Handling", callback_data="prof_ani"),
                  InlineKeyboardButton("Insight", callback_data="prof_ins")],
@@ -130,7 +130,16 @@ def keyboard_proficiency():
                  InlineKeyboardButton("Perception", callback_data="prof_per")],
 
                 [InlineKeyboardButton("Survival", callback_data="prof_sur"),
-                 InlineKeyboardButton("✅ SAVE ✅", callback_data="prof_end")]]
+                 InlineKeyboardButton("Charisma ST", callback_data="prof_cha")],
+
+                [InlineKeyboardButton("Deception", callback_data="prof_dec"),
+                 InlineKeyboardButton("Intimidation", callback_data="prof_itm")],
+
+                [InlineKeyboardButton("Performance", callback_data="prof_prf"),
+                 InlineKeyboardButton("Persuasion", callback_data="prof_prs")],
+
+                 [InlineKeyboardButton("✅ SAVE ✅", callback_data="prof_end")]
+                ]
 
     return keyboard
 

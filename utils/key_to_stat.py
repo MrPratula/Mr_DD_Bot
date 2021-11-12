@@ -88,7 +88,7 @@ def get_stat(choice):
     elif choice == "prf":
         main_stat = "charisma"
         stat = "performance"
-    elif choice == "cha":
+    elif choice == "prs":
         main_stat = "charisma"
         stat = "persuasion"
     elif choice == "pro":
