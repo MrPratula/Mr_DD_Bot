@@ -85,6 +85,15 @@ def char_view_button(update, context):
 
     result_prof = cursor.fetchall()
 
+    query = "SELECT class FROM `character` WHERE char_id = %s"
+
+    try:
+        cursor.execute(query, (char_id,))
+    except:
+        print("can not retriever class from character")
+
+    result_class = cursor.fetchall()
+
     stats = []
     for stat in result_stat[0]:
         stats.append(stat)
@@ -96,9 +105,9 @@ def char_view_button(update, context):
             profs.append(prof_name(pos))
             pos += 1
 
-    char_name = "<b>"+char_name+"</b>"
+    char_name = "<b>{}</b>".format(char_name)
     message = text("char_view").format(char_name, stats[0], stats[1], stats[2], stats[3], stats[4], stats[5], stats[6],
-                                       " - ".join(profs).replace("_", " "))
+                                       " - ".join(profs).replace("_", " "), result_class[0][0].capitalize())
     c_query.edit_message_text(text=message, parse_mode=telegram.ParseMode.HTML)
 
 

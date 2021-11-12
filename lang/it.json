@@ -9,7 +9,7 @@
 
     "char_none":   "Al momento non possiedi alcun personaggio.\nPer creare un nuovo personaggio usa il comando /new.",
     "char_some":   "Nome - visualizza personaggio\n✅ - attiva personaggio\n\uD83D\uDD27 - modifica personaggio\n❌ - cancella personaggio.\nUsa il comando /new per crearne uno nuovo.",
-    "char_view":  "{}\nForza = {}\nDestrezza = {}\nCostituzione = {}\nIntelligenza = {}\nSaggezza = {}\nCarisma = {}\nCompetenza = {}\nHai competenza nelle seguenti abilità:\n{}",
+    "char_view":  "{}\nForza = {}\nDestrezza = {}\nCostituzione = {}\nIntelligenza = {}\nSaggezza = {}\nCarisma = {}\nCompetenza = {}\n\n<b>Hai competenza nelle seguenti abilità:</b>\n{}\n\n<b>Classe:</b>\n{}",
     "char_update": "Adesso {} è il tuo personaggio attivo!",
     "char_edit": "Pagina configurazione di {}. Cosa vuoi modificare?",
     "char_stat": "Stai modificando le statistiche di {}.\nPremi END quando hai terminato.",
