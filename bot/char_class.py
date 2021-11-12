@@ -8,7 +8,10 @@ from utils.db import connect
 
 def char_class(update, context):
 
-    char_id = get_active(update.message.from_user.id)
+    try:
+        char_id = get_active(update.message.from_user.id)
+    except:
+        char_id = context.user_data["char_selected"]
 
     if char_id is None:
         update.message.reply_text(text("info_no_active"))
@@ -34,7 +37,11 @@ def char_class(update, context):
     reply_markup = InlineKeyboardMarkup(keyboard)
     message = text("class_start").format(char_name.capitalize())
 
-    update.message.reply_text(message, reply_markup=reply_markup)
+    try:
+        update.message.reply_text(message, reply_markup=reply_markup)
+    except:
+        c_query = update.callback_query
+        c_query.edit_message_text(message, reply_markup=reply_markup)
 
 
 def class_select(update, context):

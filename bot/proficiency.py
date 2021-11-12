@@ -9,7 +9,10 @@ from utils.db import connect
 
 def proficiency(update, context):
 
-    char_id = get_active(update.message.from_user.id)
+    try:
+        char_id = get_active(update.message.from_user.id)
+    except:
+        char_id = context.user_data["char_selected"]
 
     if char_id is None:
         update.message.reply_text(text("info_no_active"))
@@ -20,7 +23,12 @@ def proficiency(update, context):
     keyboard = keyboard_proficiency()
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text(text("proficiency_start"), reply_markup=reply_markup)
+    message = text("proficiency_start")
+    try:
+        update.message.reply_text(message, reply_markup=reply_markup)
+    except:
+        c_query = update.callback_query
+        c_query.edit_message_text(message, reply_markup=reply_markup)
 
 
 def proficiency_button(update, context):

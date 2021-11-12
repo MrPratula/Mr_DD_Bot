@@ -242,3 +242,17 @@ def keyboard_class(options):
 
     return keyboard
 
+
+def keyboard_edit():
+
+    keyboard = [[InlineKeyboardButton("Stats   📝", callback_data="char_set_stats_button"),
+                 InlineKeyboardButton("Life   💚", callback_data="char_set_life")],
+
+                [InlineKeyboardButton("Spells   🪄", callback_data="char_set_spell"),
+                 InlineKeyboardButton("Weapons   ⚔", callback_data="char_set_weap")],
+
+                [InlineKeyboardButton("Class   🛡", callback_data="char_set_class"),
+                 InlineKeyboardButton("Proficiencies   🔨", callback_data="char_set_prof")]
+                ]
+
+    return keyboard

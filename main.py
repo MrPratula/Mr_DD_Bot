@@ -4,7 +4,7 @@ import logging
 from bot.start import start
 from bot.help import help
 from bot.character import character, char_view_button, char_active_button, char_edit_button, char_delete_button, \
-                            char_stat_button, char_close
+                            char_stat_button, char_close, char_edit_stats_button
 from utils.conversation_handler import new_char_handler
 from bot.dm import dm
 from bot.roll import roll, button_roll
@@ -51,6 +51,14 @@ if __name__ == '__main__':
     dispatcher.add_handler(CallbackQueryHandler(char_view_button, pattern="^char_view.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_active_button, pattern="^char_active.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_edit_button, pattern="^char_edit.*$"))
+
+    dispatcher.add_handler(CallbackQueryHandler(char_edit_stats_button, pattern="char_set_stats_button"))
+    dispatcher.add_handler(CallbackQueryHandler(life, pattern="char_set_life"))
+    dispatcher.add_handler(CallbackQueryHandler(config_first_button, pattern="char_set_spell"))
+    dispatcher.add_handler(CallbackQueryHandler(config_first_button, pattern="char_set_weap"))
+    dispatcher.add_handler(CallbackQueryHandler(proficiency, pattern="char_set_prof"))
+    dispatcher.add_handler(CallbackQueryHandler(char_class, pattern="char_set_class"))
+
     dispatcher.add_handler(CallbackQueryHandler(char_stat_button, pattern="^char_stat.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_close, pattern="^char_close.*$"))
     dispatcher.add_handler(CallbackQueryHandler(char_delete_button, pattern="^char_delete.*$"))
@@ -74,6 +82,11 @@ if __name__ == '__main__':
     dispatcher.add_handler(CallbackQueryHandler(config_first_button, pattern="^config_1_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(config_weap_button, pattern="^config_2_weap_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="^config_2_spell_.*$"))
+
+    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_stats"))
+    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_life"))
+    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_class"))
+    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_prof"))
 
     dispatcher.add_handler(CallbackQueryHandler(class_select, pattern="^class_.*$"))
 

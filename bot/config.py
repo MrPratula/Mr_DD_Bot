@@ -32,6 +32,7 @@ def config_first_button(update, context):
 
     c_query = update.callback_query
     choice = c_query.data[9:]
+
     char_id = context.user_data["char_id"]
 
     db = connect()

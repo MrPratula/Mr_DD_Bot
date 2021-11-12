@@ -5,6 +5,7 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 from utils.lang import text
 from utils.db import connect
 from utils.key_to_stat import get_stat, stat_name, prof_name
+from utils.keyboard import keyboard_edit
 
 
 def character(update, context):
@@ -134,6 +135,23 @@ def char_edit_button(update, context):
 
     char_id = int(c_query.data[10:])
     context.user_data.update({"char_selected": char_id})
+    context.user_data.update({"char_id": char_id})
+    char_name = context.user_data[char_id]
+    context.user_data.update({"char_name": char_name})
+
+    keyboard = keyboard_edit()
+
+    message = text("char_edit").format(char_name)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    c_query.edit_message_text(text=message, reply_markup=reply_markup)
+
+
+def char_edit_stats_button(update, context):
+
+    c_query = update.callback_query
+
+    char_id = context.user_data["char_selected"]
     char_name = context.user_data[char_id]
 
     db = connect()
@@ -159,7 +177,7 @@ def char_edit_button(update, context):
         var += 1
     keyboard.append([InlineKeyboardButton("✅   SAVE   ✅", callback_data="char_stat_end")])
 
-    message = text("char_edit").format(char_name)
+    message = text("char_stat").format(char_name)
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     c_query.edit_message_text(text=message, reply_markup=reply_markup)
@@ -215,7 +233,7 @@ def char_stat_button(update, context):
         var += 1
     keyboard.append([InlineKeyboardButton("✅   SAVE   ✅", callback_data="char_stat_end")])
 
-    message = text("char_edit").format(char_name)
+    message = text("char_stat").format(char_name)
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     c_query.edit_message_text(text=message, reply_markup=reply_markup)

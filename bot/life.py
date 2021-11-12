@@ -9,7 +9,11 @@ from utils.lang import text
 
 def life(update, context):
 
-    char_id = get_active(update.message.from_user.id)
+    try:
+        char_id = get_active(update.message.from_user.id)
+    except:
+        char_id = context.user_data["char_selected"]
+
     char_hp = get_hp(char_id)
     char_name = get_name(char_id)
 
@@ -25,7 +29,12 @@ def life(update, context):
     context.user_data.update({"char_name": char_name})
 
     message = text("life_init").format(char_name.capitalize())
-    update.message.reply_text(message, reply_markup=reply_markup)
+
+    try:
+        update.message.reply_text(message, reply_markup=reply_markup)
+    except:
+        c_query = update.callback_query
+        c_query.edit_message_text(message, reply_markup=reply_markup)
 
 
 def life_button(update, context):
