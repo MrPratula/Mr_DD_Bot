@@ -86,11 +86,6 @@ if __name__ == '__main__':
     dispatcher.add_handler(CallbackQueryHandler(config_weap_button, pattern="^config_2_weap_.*$"))
     dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="^config_2_spell_.*$"))
 
-    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_stats"))
-    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_life"))
-    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_class"))
-    #dispatcher.add_handler(CallbackQueryHandler(config_spell_button, pattern="config_2_prof"))
-
     dispatcher.add_handler(CallbackQueryHandler(class_select, pattern="^class_.*$"))
 
     dispatcher.add_handler(new_char_handler)    # /new
