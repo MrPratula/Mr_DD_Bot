@@ -16,6 +16,7 @@ from bot.lang import language, language_button
 from bot.life import life, life_button
 from bot.config import config, config_first_button, config_spell_button, config_weap_button
 from bot.char_class import char_class, class_select
+from bot.play import play, close
 
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
@@ -45,6 +46,8 @@ if __name__ == '__main__':
     dispatcher.add_handler(CommandHandler('life', life))
     dispatcher.add_handler(CommandHandler('cfg', config))
     dispatcher.add_handler(CommandHandler('class', char_class))
+    dispatcher.add_handler(CommandHandler('play', play))
+    dispatcher.add_handler(CommandHandler('close', close))
 
     dispatcher.add_handler(CallbackQueryHandler(button_roll, pattern="^d_.*$"))
 

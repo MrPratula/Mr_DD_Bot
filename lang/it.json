@@ -66,5 +66,9 @@
     "config_weap_end": "Le armi di {} sono state aggiornate con successo!",
 
     "class_start": "Seleziona la classe di {}",
-    "class_update": "È ststa impostata la classe {} per {}"
+    "class_update": "È ststa impostata la classe {} per {}",
+
+    "play_placeholder": "Fai la tua mossa!",
+    "play_start": "Modalità gioco avviata. Usa /close per chiudere la tastiera",
+    "play_close": "Ci vediamo alla prossima avventura!"
 }
