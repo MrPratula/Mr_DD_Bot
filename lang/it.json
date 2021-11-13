@@ -44,6 +44,7 @@
     "proficiency_end": "Le tue modifiche sono state salvate con successo!",
 
     "info_no_active" : "Non hai un personaggio attivo. Usa il comando /char per impostare il tuo personaggio!",
+    "info_no_class": "Non hai impostato la classe del tuo personaggio. Usa il comando /class prima di poter fare un attacco!",
 
     "attack_init": "Quale tipo di attacco vuoi fare?",
     "attack_choose_weapon": "Quale arma vuoi usare per sferrare il tuo attacco?",

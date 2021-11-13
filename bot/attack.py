@@ -8,6 +8,7 @@ from utils.lang import text
 from utils.keyboard import keyboard_attack, keyboard_attack_2, keyboard_attack_ask1, keyboard_attack_ask2
 from utils.db import connect
 from utils.die import roll
+from utils.character_integrity import has_class
 
 
 def attack(update, context):
@@ -15,6 +16,10 @@ def attack(update, context):
 
     if char_id is None:
         update.message.reply_text(text("info_no_active"))
+        return
+
+    if not has_class(char_id):
+        update.message.reply_text(text("info_no_class"))
         return
 
     keyboard = keyboard_attack()
@@ -324,11 +329,11 @@ def is_proficient(char_id, weapon):
 
     try:
         cursor.execute(sql_query, (char_class,))
+        result = cursor.fetchall()
+        result = result[0][0]
     except:
         print("can not know if character is proficient with a weapon")
-
-    result = cursor.fetchall()
-    result = result[0][0]
+        return False
 
     if result is None:
         return False
