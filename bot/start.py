@@ -12,9 +12,10 @@ def start(update, context):
     query = "SELECT username FROM user WHERE chat_id = %s"
 
     chat_id = update.message.from_user.id
-    try:
+
+    if update.message.from_user.username is not None:
         name = update.message.from_user.username
-    except:
+    else:
         name = update.message.from_user.first_name
 
     try:
@@ -34,15 +35,6 @@ def start(update, context):
             db.commit()
         except mysql.connector.errors.IntegrityError:
             print("can not add user into db")
-
-        query = "INSERT INTO active (chat_id, char_id) VALUES (%s, %s)"
-        data = (chat_id, None)
-
-        try:
-            cursor.execute(query, data)
-            db.commit()
-        except mysql.connector.errors.IntegrityError:
-            print("can not init active table for new user")
 
         message = text("start_new")
 
