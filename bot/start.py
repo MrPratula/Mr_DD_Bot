@@ -36,6 +36,15 @@ def start(update, context):
         except mysql.connector.errors.IntegrityError:
             print("can not add user into db")
 
+        query = "INSERT INTO active (chat_id, char_id) VALUES (%s, %s)"
+        data = (chat_id, None)
+
+        try:
+            cursor.execute(query, data)
+            db.commit()
+        except mysql.connector.errors.IntegrityError:
+            print("can not init active table for new user")
+
         message = text("start_new")
 
     else:
