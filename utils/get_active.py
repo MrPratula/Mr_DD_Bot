@@ -14,7 +14,11 @@ def get_active(chat_id):
         print("can not retriever char_id from active")
 
     result = cursor.fetchall()
-    char_id = int(result[0][0])
+
+    try:
+        char_id = int(result[0][0])
+    except:
+        return None
 
     if not result:
         return None
